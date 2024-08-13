@@ -178,7 +178,7 @@ void Encoder::Convert(std::string& str, int conv_dst, int) {
 		// From UTF-8 to 1252
 		// Based on https://stackoverflow.com/q/23689733/
 		_buffer.resize(str.size() + 1);
-		uint32_t codepoint;
+		uint32_t codepoint = 0;
 
 		for (size_t str_idx = 0; str_idx < str.size(); ++str_idx) {
 			unsigned char ch = str[str_idx];
